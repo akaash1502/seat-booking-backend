@@ -60,6 +60,23 @@ router.post('/book', async (req, res) => {
     }
 });
 
+router.get('/seats', async (req, res) => {
+    try {
+      // Fetch all seats that are booked
+      const bookedSeats = await Seat.findAll({
+        where: {
+          is_booked: true,
+        },
+        attributes: ['row_number', 'seat_number'], // Only return row and col for simplicity
+      });
+      res.json({"bookedSeats":bookedSeats}); 
+      console.log("RESPONSE FROM SEATS FETCHED---><><><><><><><------------",res);
+      // Send booked seats back to client
+    } catch (error) {
+      console.error('Error fetching booked seats:', error);
+      res.status(500).json({ error: 'An error occurred while fetching booked seats.' });
+    }
+  });
 // Middleware to authenticate JWT
 // function authenticateToken(req, res, next) {
 //     const token = req.headers['authorization'];
