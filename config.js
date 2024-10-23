@@ -14,6 +14,13 @@ module.exports = {
         database: 'booking_db_pfaz',
         host: 'dpg-csclv4d6l47c73cpptq0-a.singapore-postgres.render.com',
         dialect: 'postgres',
-        port: 5432 // Make sure to include the port if it's not default.
+        port: 5432, // Postgres default port
+        dialectOptions: {
+            ssl: {
+                require: true,  // Enforces SSL
+                rejectUnauthorized: false  // This skips the certificate verification. You can adjust this for stricter security.
+            }
+        }
     },
 };
+
