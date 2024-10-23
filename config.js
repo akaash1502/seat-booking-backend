@@ -1,9 +1,9 @@
 module.exports = {
     db: {
-        username: 'akashs2002',
-        password: 'akashs2002',
-        database: 'booking_db',
-        host: 'localhost',
+        username: 'booking_db_pfaz_user',
+        password: 'Krf45npc9z0tDq3nMGlzCklycirQs4uX',
+        database: 'booking_db_pfaz',
+        host: 'postgresql://booking_db_pfaz_user:Krf45npc9z0tDq3nMGlzCklycirQs4uX@dpg-csclv4d6l47c73cpptq0-a.singapore-postgres.render.com/booking_db_pfaz',
         dialect: 'postgres'
     },
 };
